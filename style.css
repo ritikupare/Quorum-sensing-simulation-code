@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fafafa;
+  color: #202020;
+}
+
+header {
+  padding: 24px 32px 16px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+}
+
+header p {
+  margin: 0;
+  max-width: 860px;
+  line-height: 1.7;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr) 280px;
+  gap: 20px;
+  padding: 24px 32px 32px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel-left {
+  min-width: 280px;
+}
+
+.panel-center {
+  min-width: 0;
+}
+
+.panel-right {
+  min-width: 260px;
+}
+
+.control-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 1px solid #888;
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #f3f3f3;
+}
+
+.control-block {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.info-box,
+.info-card {
+  border-top: 1px solid #eee;
+  padding-top: 14px;
+}
+
+.info-box h2,
+.info-card h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.canvas-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stats-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: #f8f9fc;
+  border: 1px solid #e4e8f0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 120px;
+  font-weight: 600;
+}
+
+.legend {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.legend.on {
+  background: #ed553b;
+  box-shadow: 0 0 0 2px rgba(237, 85, 59, 0.2);
+}
+
+.legend.off {
+  background: #2692ff;
+  box-shadow: 0 0 0 2px rgba(38, 146, 255, 0.2);
+}
+
+ul {
+  padding-left: 18px;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 1180px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}

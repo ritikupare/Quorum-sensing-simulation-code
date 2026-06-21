@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quorum Sensing Simulation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Quorum Sensing Simulation</h1>
+    <p>Explore how bacteria decide to switch quorum sensing signaling <strong>ON</strong> or <strong>OFF</strong> based on local autoinducer concentration and temperature.</p>
+  </header>
+
+  <main>
+    <section class="panel panel-left">
+      <div class="control-row">
+        <button id="resetBtn">Reset</button>
+        <button id="pauseBtn">Pause</button>
+      </div>
+      <div class="control-block">
+        <label>Simulation speed: <span id="speedValue">1.0×</span></label>
+        <input id="speedSlider" type="range" min="0.2" max="3.0" step="0.1" value="1.0" />
+      </div>
+      <div class="control-block">
+        <label>Temperature (°C): <span id="tempValue">30</span></label>
+        <input id="tempSlider" type="range" min="15" max="45" step="1" value="30" />
+      </div>
+      <div class="control-block">
+        <label>Activation threshold: <span id="thresholdValue">0.35</span></label>
+        <input id="thresholdSlider" type="range" min="0.05" max="1.0" step="0.01" value="0.35" />
+      </div>
+      <div class="control-block">
+        <label>Autoinducer production: <span id="productionValue">0.16</span></label>
+        <input id="productionSlider" type="range" min="0.05" max="0.5" step="0.01" value="0.16" />
+      </div>
+      <div class="control-block">
+        <label>Diffusion rate: <span id="diffusionValue">0.20</span></label>
+        <input id="diffusionSlider" type="range" min="0.05" max="0.4" step="0.01" value="0.20" />
+      </div>
+      <div class="control-block">
+        <label>Temperature effect: <span id="tempEffectValue">0.40</span></label>
+        <input id="tempEffectSlider" type="range" min="0.0" max="1.0" step="0.05" value="0.40" />
+      </div>
+      <div class="control-block info-box">
+        <h2>How it works</h2>
+        <p>Bacteria produce an autoinducer signal molecule into the environment. When local concentration passes a threshold, bacteria turn quorum sensing signaling <strong>ON</strong>.</p>
+        <p>Temperature shifts the threshold and production rates: warmer conditions can promote signaling activation, while cooler conditions make activation harder.</p>
+      </div>
+    </section>
+
+    <section class="panel panel-center">
+      <div class="canvas-wrapper">
+        <canvas id="simulationCanvas" width="720" height="520"></canvas>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">Bacteria ON: <span id="onCount">0</span></div>
+        <div class="stat-item">Bacteria OFF: <span id="offCount">0</span></div>
+        <div class="stat-item">Average AI: <span id="avgAI">0.00</span></div>
+      </div>
+    </section>
+
+    <section class="panel panel-right">
+      <div class="info-card">
+        <h2>Simulation output</h2>
+        <p>Color map shows local autoinducer concentration. Bacteria are shown as circles:</p>
+        <ul>
+          <li><span class="legend on"></span> ON (quorum sensing active)</li>
+          <li><span class="legend off"></span> OFF (quorum sensing inactive)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h2>Interpretation</h2>
+        <p>As more bacteria accumulate AI, the local concentration rises. Bacteria switch ON when AI is above a threshold that depends on temperature.</p>
+        <p>Use the sliders to explore how environmental temperature and production change the collective behavior.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
