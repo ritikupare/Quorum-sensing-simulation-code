@@ -1,4 +1,4 @@
-# Quorum Sensing Simulation
+# Quorum Sensing Simulation 
 
 A web-based simulation of quorum sensing in bacteria, showing how individual cells decide to switch signaling ON or OFF based on local autoinducer concentration and environmental temperature.
 
