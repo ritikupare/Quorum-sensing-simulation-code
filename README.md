@@ -10,11 +10,4 @@ A web-based simulation of quorum sensing in bacteria, showing how individual cel
 
 ## Run locally
 
-1. Open `index.html` directly in the browser, or
-2. Start a local server in this folder:
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://127.0.0.1:8000` in your browser.
+link: https://ritikupare.github.io/Quorum-sensing-simulation-code/
